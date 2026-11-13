@@ -44,7 +44,7 @@ section{padding:clamp(64px,8vw,112px) 0}
 .menu a:hover{color:var(--zloto-ciem)}
 .menu a.akt{border-bottom-color:var(--zloto)}
 .menu .menu-tel{display:none}
-.top-tel{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--czern);white-space:nowrap}
+.top-tel{flex:none;display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--czern);white-space:nowrap}
 .top-tel svg{width:22px;height:22px;color:var(--zloto-ciem)}
 .top-cta{min-height:44px;padding:0 20px;font-size:15px}
 .burger{display:none}
@@ -64,9 +64,6 @@ section{padding:clamp(64px,8vw,112px) 0}
 .konkurs h2{max-width:14ch}
 .duzy{font-size:20px;color:var(--czern)}
 .konkurs-tekst p:not(.duzy){color:var(--szary)}
-.filary{list-style:none;margin:0;padding:0;border-top:1px solid var(--linia)}
-.filary li{display:flex;align-items:center;gap:22px;font:600 clamp(30px,3vw,42px)/1 var(--serif);color:var(--czern);padding:22px 0;border-bottom:1px solid var(--linia)}
-.filary svg{width:22px;height:44px;fill:var(--zloto);flex:none}
 
 /* edycja */
 .edycja{background:var(--tlo2)}
@@ -173,6 +170,70 @@ section{padding:clamp(64px,8vw,112px) 0}
 .stopka-in a:hover{color:#E2C08A}
 .stopka-dol{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid #3A3838}
 
+
+/* trzy filary */
+.filary-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,7vw,120px);align-items:start}
+.filary-znak{position:sticky;top:calc(var(--top) + 40px);display:flex;justify-content:center;padding:20px 0}
+.duza-postac{height:min(520px,calc(100vh - var(--top) - 140px));width:auto;aspect-ratio:289/581;overflow:visible}
+.duza-postac use,.mala-postac use{fill:#DCD8D1;transition:fill .45s ease}
+.duza-postac[data-akt="1"] .p1,.duza-postac[data-akt="2"] .p2,.duza-postac[data-akt="3"] .p3,.mala-postac use.on{fill:var(--zloto)}
+.filary h2{max-width:16ch}
+.filar{position:relative;padding:30px 0 30px 0;border-top:1px solid var(--linia);transition:opacity .4s}
+.filar h3{font-size:clamp(24px,2.2vw,30px);margin-bottom:8px}
+.filar p{color:var(--szary);margin:0;max-width:36em}
+.mala-postac{display:none;position:absolute;left:0;top:28px;width:28px;height:56px}
+.filary-liczby{border-top:1px solid var(--linia);padding-top:26px;color:var(--szary)}
+.filary-liczby a{color:var(--czern);font-weight:700;text-decoration-color:var(--zloto);text-underline-offset:3px}
+
+/* droga do 30-lecia */
+.droga{background:var(--tlo2);overflow:hidden}
+.droga-gl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;margin-bottom:44px}
+.droga-gl .droga-xxx{font:600 clamp(110px,15vw,230px)/.8 var(--serif);color:var(--zloto);margin:0;letter-spacing:-.04em}
+.droga-gl p{color:var(--szary);font-size:18px;max-width:40em;margin:0}
+.tor-lata{list-style:none;margin:0}
+.rok{flex:0 0 min(300px,74vw);scroll-snap-align:start;background:#fff;border-top:3px solid var(--czern);padding:22px 22px 26px;display:flex;flex-direction:column;gap:4px;user-select:none}
+.rok-nr{font:600 44px/1 var(--serif);color:var(--czern)}
+.rok-ed{font-weight:700;color:var(--zloto-ciem);font-size:15px;margin-bottom:8px}
+.rok p{margin:0;color:var(--szary);font-size:15.5px}
+.rok-jub{background:var(--czern);border-top-color:var(--zloto)}
+.rok-jub .rok-nr{color:#fff}.rok-jub .rok-ed{color:#E2C08A}.rok-jub p{color:#D3CEC6}
+.rok-link{margin-top:auto;padding-top:14px;color:#E2C08A;font-weight:700;text-decoration:none}
+.rok-link::after{content:" →"}
+
+/* kroki */
+.kroki{margin:22px 0;padding-left:22px;color:var(--szary)}
+.kroki li{padding:6px 0}
+.kroki b{color:var(--czern)}
+.kroki li::marker{color:var(--zloto-ciem);font-weight:700}
+
+/* pytania */
+.pytania-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,100px);align-items:start}
+.pytania p{color:var(--szary)}
+.pytania a{color:var(--czern);font-weight:700}
+.faq details{border-top:1px solid var(--linia)}
+.faq details:last-child{border-bottom:1px solid var(--linia)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;position:relative;font:600 20px/1.35 var(--serif);color:var(--czern)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font:400 28px/1 var(--sans);color:var(--zloto)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:0 0 20px;max-width:40em}
+.partnerzy-l{font-size:15.5px}
+.kapitula{background:var(--tlo2)}
+.galeria{background:#fff}
+
+@media (max-width:1060px){
+  .filary-in,.pytania-in{grid-template-columns:minmax(0,1fr)}
+  .filary-znak{display:none}
+  .mala-postac{display:block}
+  .filar{padding-left:48px}
+}
+@media (max-width:760px){
+  .droga-gl{grid-template-columns:minmax(0,1fr);gap:8px}
+  .droga-gl .droga-xxx{font-size:96px}
+  .filar{padding:24px 0}
+  .faq summary{font-size:18px}
+}
+
 .mob{display:none}
 
 /* srednie */
@@ -220,7 +281,6 @@ section{padding:clamp(64px,8vw,112px) 0}
   .kategorie,.osoby{grid-template-columns:minmax(0,1fr)}
   .kategorie{gap:28px}
   .form{grid-template-columns:minmax(0,1fr)}
-  .filary li{padding:16px 0}
   .stopka-in{grid-template-columns:repeat(2,minmax(0,1fr))}
   .st-marka{grid-column:1/-1}
   .stopka{padding-bottom:96px}
@@ -239,3 +299,5 @@ section{padding:clamp(64px,8vw,112px) 0}
   .hero h1{font-size:clamp(44px,4.6vw,70px)}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (min-width:1061px){.filar{opacity:.55}.filar.teraz{opacity:1}}

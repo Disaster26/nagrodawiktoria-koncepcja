@@ -15,7 +15,7 @@
   function akt(){
     var y=window.scrollY+window.innerHeight*0.35,cur=null;
     sekcje.forEach(function(s){if(s.offsetTop<=y)cur=s.id;});
-    if(!cur)cur='konkurs';
+    if(!cur)cur='filary';
     linki.forEach(function(a){a.classList.toggle('akt',a.getAttribute('href')==='#'+cur);});
   }
   window.addEventListener('scroll',akt,{passive:true});akt();
@@ -59,3 +59,15 @@
   });
 })();
 (function(){var d=document.getElementById('lista-laur');if(d&&window.matchMedia('(min-width:761px)').matches)d.open=true;})();
+// filary: podswietlenie pociagniecia pedzla w duzej postaci
+(function(){
+  var duza=document.querySelector('.duza-postac'),fil=[].slice.call(document.querySelectorAll('.filar'));
+  if(!duza||!fil.length)return;
+  function ust(){
+    var mid=window.innerHeight*0.5,akt=1;
+    fil.forEach(function(f){if(f.getBoundingClientRect().top<mid)akt=+f.dataset.filar;});
+    duza.setAttribute('data-akt',akt);
+    fil.forEach(function(f){f.classList.toggle('teraz',+f.dataset.filar===akt);});
+  }
+  window.addEventListener('scroll',ust,{passive:true});ust();
+})();
