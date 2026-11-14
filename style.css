@@ -474,3 +474,4 @@ body.lb-blok{overflow:hidden}
 @media (max-width:1060px){.pas .film{flex-basis:calc((100% - 20px)/2)}}
 @media (max-width:760px){.pas .film{flex-basis:88%}}
 .edycja-gl .rok-duzy{color:var(--zloto)}
+.stopka .st-h{font:700 15px var(--sans);color:#fff;margin:0 0 10px;letter-spacing:0}
