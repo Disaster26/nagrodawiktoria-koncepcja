@@ -162,13 +162,17 @@
   window.addEventListener('scroll',ust,{passive:true});ust();
 })();
 
-// 16.11: rok i numer edycji liczone automatycznie (nabor do kolejnej edycji: 1-30 stycznia)
+// 16.11: rok, edycja i terminy liczone automatycznie
+// nabor co roku 4.01-31.07, materialy do 4.09; data Gali tylko gdy podana przez Fundacje, inaczej "jesienia <rok>"
 (function(){
-  var NABOR_DO=30,PIERWSZA=1998; // XXIX edycja = 2026, wiec edycja = rok - 1997
+  var GALA={2027:'30 października 2027'};
   var d=new Date(),Y=d.getFullYear();
-  var Yn=(d.getMonth()===0&&d.getDate()<=NABOR_DO)?Y:Y+1,nr=Yn-PIERWSZA+1;
+  var Yn=d.getMonth()<=6?Y:Y+1,nr=Yn-1997; // XXIX edycja = 2026; po 31 lipca pokazujemy kolejna edycje
   function rzym(n){var w=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']],s='';w.forEach(function(p){while(n>=p[0]){s+=p[1];n-=p[0];}});return s;}
   function ust(sel,v){document.querySelectorAll(sel).forEach(function(e){e.textContent=v;});}
   ust('[data-rok-biezacy]',Y);ust('[data-rok-nabor]',Yn);ust('[data-edycja-nabor]',rzym(nr));
+  ust('[data-nabor-zakres]','4 stycznia do 31 lipca '+Yn);
+  ust('[data-materialy]','4 września '+Yn);ust('[data-lipiec]','31 lipca '+Yn);
+  ust('[data-gala]',GALA[Yn]||('jesienią '+Yn));
   document.querySelectorAll('[data-jubileusz]').forEach(function(e){e.hidden=nr%5!==0;});
 })();

@@ -539,3 +539,10 @@ body.lb-blok{overflow:hidden}
   .foto-wkrotce svg{width:34px;height:68px;right:18px;top:16px}
 }
 .pakiet .link-dalej{display:inline-block;margin-top:22px}
+
+.rodo{max-width:860px}
+.rodo ol{padding-left:22px;margin:22px 0;color:var(--szary)}
+.rodo li{padding:8px 0}
+.rodo b{color:var(--czern)}
+.rodo a,.rodo-info a{color:var(--czern);font-weight:700;text-decoration-color:var(--zloto);text-underline-offset:3px}
+.rodo-info{margin:0}
