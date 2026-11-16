@@ -161,3 +161,14 @@
   }
   window.addEventListener('scroll',ust,{passive:true});ust();
 })();
+
+// 16.11: rok i numer edycji liczone automatycznie (nabor do kolejnej edycji: 1-30 stycznia)
+(function(){
+  var NABOR_DO=30,PIERWSZA=1998; // XXIX edycja = 2026, wiec edycja = rok - 1997
+  var d=new Date(),Y=d.getFullYear();
+  var Yn=(d.getMonth()===0&&d.getDate()<=NABOR_DO)?Y:Y+1,nr=Yn-PIERWSZA+1;
+  function rzym(n){var w=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']],s='';w.forEach(function(p){while(n>=p[0]){s+=p[1];n-=p[0];}});return s;}
+  function ust(sel,v){document.querySelectorAll(sel).forEach(function(e){e.textContent=v;});}
+  ust('[data-rok-biezacy]',Y);ust('[data-rok-nabor]',Yn);ust('[data-edycja-nabor]',rzym(nr));
+  document.querySelectorAll('[data-jubileusz]').forEach(function(e){e.hidden=nr%5!==0;});
+})();

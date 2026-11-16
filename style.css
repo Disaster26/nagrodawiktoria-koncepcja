@@ -511,3 +511,31 @@ body.lb-blok{overflow:hidden}
   .top-tel{margin-left:auto}
   .top-tel span{display:inline}
 }
+
+/* 16.11: kontakt w pierwszym ekranie, laureaci i finalisci, miejsce na zdjecia 2026 */
+.hero-kontakt{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin:22px 0 0;font-size:16px;color:#E9D3AE}
+.hero-kontakt span{font-weight:600}
+.hero-kontakt a{color:#fff;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(233,211,174,.55);padding-bottom:1px}
+.hero-kontakt a:hover{border-bottom-color:#E9D3AE}
+.udzial .termin{border-left:3px solid var(--zloto);padding-left:14px}
+.ln-2026{margin-top:48px;border-top:1px solid #3A3838;padding-top:32px}
+.ln-2026 h3{font-size:clamp(22px,2vw,26px);margin-bottom:18px}
+.ln-kol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ln-miejsce{border:1.5px dashed #57524C;border-radius:3px;padding:24px 24px 26px;color:#BDB7AE}
+.ln-miejsce b{display:block;font:600 20px/1.3 var(--serif);color:#fff;margin-bottom:6px}
+.ln-miejsce p{margin:0}
+.archiwum-2026 .galeria-miejsce+.galeria-miejsce,.edycja-gl .galeria-miejsce+.galeria-miejsce{margin-top:14px}
+.foto-wkrotce .foto-ekran{position:relative;aspect-ratio:3/2;background:var(--czern);border-radius:3px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;gap:6px}
+.foto-wkrotce svg{position:absolute;right:24px;top:22px;width:44px;height:88px;fill:var(--zloto)}
+.foto-wkrotce .wk-rok{font:600 64px/1 var(--serif);color:#fff}
+.foto-wkrotce .wk-opis{color:#D3CEC6;font-size:15.5px;max-width:26em}
+@media (max-width:760px){
+  .hero-kontakt{margin-top:16px;font-size:15px;gap:4px 14px}
+  .hero-kontakt span{flex-basis:100%}
+  .ln-kol{grid-template-columns:minmax(0,1fr);gap:14px}
+  .ln-miejsce{padding:20px}
+  .foto-wkrotce .foto-ekran{padding:18px}
+  .foto-wkrotce .wk-rok{font-size:48px}
+  .foto-wkrotce svg{width:34px;height:68px;right:18px;top:16px}
+}
+.pakiet .link-dalej{display:inline-block;margin-top:22px}
