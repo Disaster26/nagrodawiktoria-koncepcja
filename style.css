@@ -554,3 +554,26 @@ body.lb-blok{overflow:hidden}
 .wyr .wyr-nowosc b{font:700 11.5px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--zloto-ciem);padding:5px 10px 4px;border-radius:2px}
 @media (max-width:1100px){.wyr-lista{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:760px){.wyr-lista{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wyr{padding:14px 10px 16px}.wyr b{font-size:15.5px}.wyr-op{font-size:13.5px}.wyr-nowosc{font-size:12.5px}}
+/* 17.11 laureaci XXIX edycji 2026 (wg listy Fundacji) */
+.l26-lista{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;counter-reset:l26}
+.l26{counter-increment:l26;position:relative;display:flex;flex-direction:column;gap:5px;padding:22px 0 22px 46px;border-top:1px solid #3A3838}
+.l26::before{content:counter(l26,decimal-leading-zero);position:absolute;left:0;top:23px;font:600 15px/1 var(--serif);color:#6F6658;font-variant-numeric:tabular-nums}
+.l26-nagr{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--zloto);font-weight:700;line-height:1.45}
+.l26 b{font:600 19px/1.3 var(--serif);color:#fff;overflow-wrap:anywhere}
+.l26 span:not(.l26-nagr){font-size:15px;line-height:1.5;color:#BDB7AE}
+.l26 .l26-kat{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#8E877D}
+.l26-wiecej{margin-top:18px;width:100%;background:none;border:1px solid #57524C;color:#fff;border-radius:3px;padding:15px 18px;font:600 16px/1.2 var(--sans);cursor:pointer}
+.l26-wiecej:hover{border-color:var(--zloto)}
+.l25-gl{margin-top:72px;font-size:clamp(22px,2vw,26px)}
+.l25-op{color:#BDB7AE;margin:6px 0 0}
+@media (max-width:1100px){.l26-lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+  .l26-lista{grid-template-columns:minmax(0,1fr)}
+  .l26{padding:18px 0 18px 40px}.l26::before{top:19px}
+  .l26-lista.zwin .l26:nth-child(n+9){display:none}
+  .l25-gl{margin-top:56px}
+}
+/* 17.11 galeria Gali 2026 */
+.foto img,.fot img{background:#2a2829}
+.gal-wiecej{margin-top:22px}
+.wpis .wpis-link+.wpis-link{margin-left:18px}

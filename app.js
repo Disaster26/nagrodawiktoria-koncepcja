@@ -176,3 +176,10 @@
   ust('[data-gala]',GALA[Yn]||('jesienią '+Yn));
   document.querySelectorAll('[data-jubileusz]').forEach(function(e){e.hidden=nr%5!==0;});
 })();
+// 17.11: lista laureatow 2026 zwinięta na telefonie do 8 pozycji
+(function(){
+  var l=document.querySelector('[data-l26]'),b=document.querySelector('[data-l26-wiecej]');
+  if(!l||!b||!window.matchMedia('(max-width:760px)').matches)return;
+  l.classList.add('zwin');b.hidden=false;
+  b.addEventListener('click',function(){l.classList.remove('zwin');b.remove();});
+})();
